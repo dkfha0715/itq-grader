@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강사 관리 화면 | ITQ 채점</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Malgun Gothic', sans-serif; background: #f0f4f8; padding: 24px 16px; }
+    .header { background: #1e3a5f; color: #fff; padding: 20px 24px; border-radius: 12px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; }
+    .header h1 { font-size: 17px; font-weight: 700; }
+    .section { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); margin-bottom: 16px; overflow: hidden; }
+    .section-title { background: #1e3a5f; color: #fff; padding: 12px 20px; font-size: 14px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+    .password-wall { padding: 40px; text-align: center; }
+    .password-wall input { padding: 10px 14px; border: 1.5px solid #d1d5db; border-radius: 6px; font-size: 14px; margin-right: 8px; font-family: inherit; }
+    .password-wall button { padding: 10px 20px; background: #1a56db; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 14px; }
+    .content { display: none; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #f3f4f6; padding: 10px 14px; color: #374151; text-align: left; }
+    td { padding: 10px 14px; border-bottom: 1px solid #f3f4f6; }
+    tr:last-child td { border-bottom: none; }
+    .grade-A { color: #16a34a; font-weight: 700; }
+    .grade-B { color: #1d4ed8; font-weight: 700; }
+    .grade-C { color: #ca8a04; font-weight: 700; }
+    .grade-F { color: #dc2626; font-weight: 700; }
+    .student-mgmt { padding: 20px; }
+    .student-list { margin-bottom: 16px; }
+    .student-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #f3f4f6; }
+    .student-item:last-child { border-bottom: none; }
+    .add-form { display: flex; gap: 8px; margin-top: 12px; }
+    .add-form input { flex: 1; padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 6px; font-size: 14px; font-family: inherit; }
+    .btn-add { padding: 10px 20px; background: #1a56db; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; font-weight: 600; }
+    .btn-del { padding: 4px 12px; background: #fee2e2; color: #dc2626; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-family: inherit; }
+    .chart-wrap { padding: 20px; }
+    .back-link { display: block; text-align: center; margin-top: 12px; font-size: 13px; color: #6b7280; text-decoration: none; }
+    .back-link:hover { color: #1a56db; }
+    .filter-bar { padding: 14px 20px; display: flex; gap: 10px; flex-wrap: wrap; border-bottom: 1px solid #f3f4f6; }
+    .filter-bar select, .filter-bar input { padding: 7px 10px; border: 1.5px solid #d1d5db; border-radius: 6px; font-size: 13px; font-family: inherit; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>강사 관리 화면</h1>
+    <span style="font-size:12px;opacity:0.7">ITQ 인터넷 채점 시스템</span>
+  </div>
+
+  <!-- 비밀번호 -->
+  <div class="section" id="pwSection">
+    <div class="password-wall">
+      <p style="margin-bottom:16px;color:#6b7280;font-size:14px">강사 전용 화면입니다. 비밀번호를 입력하세요.</p>
+      <input type="password" id="pwInput" placeholder="비밀번호" onkeydown="if(event.key==='Enter')checkPw()">
+      <button onclick="checkPw()">확인</button>
+    </div>
+  </div>
+
+  <div class="content" id="mainContent">
+
+    <!-- 수강생 관리 -->
+    <div class="section">
+      <div class="section-title">수강생 관리</div>
+      <div class="student-mgmt">
+        <div class="student-list" id="studentList"></div>
+        <div class="add-form">
+          <input type="text" id="newStudentName" placeholder="새 수강생 이름 입력">
+          <button class="btn-add" onclick="addStudent()">추가</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 성적 현황 -->
+    <div class="section">
+      <div class="section-title">성적 현황</div>
+      <div class="filter-bar">
+        <select id="filterType">
+          <option value="">전체</option>
+          <option value="모의고사">모의고사</option>
+          <option value="기출복원">기출복원</option>
+        </select>
+        <select id="filterStudent">
+          <option value="">전체 수강생</option>
+        </select>
+      </div>
+      <table>
+        <thead><tr><th>이름</th><th>유형</th><th>회차</th><th>총점</th><th>등급</th><th>제출일</th></tr></thead>
+        <tbody id="resultsTable"></tbody>
+      </table>
+    </div>
+
+    <!-- 유형별 평균 차트 -->
+    <div class="section">
+      <div class="section-title">반 전체 유형별 평균 성취도</div>
+      <div class="chart-wrap"><canvas id="classChart" height="240"></canvas></div>
+    </div>
+
+  </div>
+
+  <a class="back-link" href="index.html">← 학생 화면으로</a>
+
+  <script type="module">
+    import { db } from './firebase-config.js';
+    import { collection, getDocs, addDoc, updateDoc, doc, query, orderBy } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+    const ADMIN_PW = 'itq2026';
+
+    window.checkPw = function() {
+      if (document.getElementById('pwInput').value === ADMIN_PW) {
+        document.getElementById('pwSection').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        loadAll();
+      } else {
+        alert('비밀번호가 틀렸습니다.');
+      }
+    };
+
+    let allStudents = [];
+    let allResults = [];
+
+    async function loadAll() {
+      await loadStudents();
+      await loadResults();
+      renderChart();
+    }
+
+    // 수강생 로드
+    async function loadStudents() {
+      const snap = await getDocs(collection(db, 'students'));
+      allStudents = [];
+      snap.forEach(d => allStudents.push({ id: d.id, ...d.data() }));
+      renderStudentList();
+      // 필터 드롭다운
+      const sel = document.getElementById('filterStudent');
+      sel.innerHTML = '<option value="">전체 수강생</option>';
+      allStudents.filter(s=>s.active).forEach(s => {
+        sel.innerHTML += `<option value="${s.id}">${s.name}</option>`;
+      });
+    }
+
+    function renderStudentList() {
+      const el = document.getElementById('studentList');
+      el.innerHTML = allStudents.filter(s=>s.active).map(s =>
+        `<div class="student-item">
+          <span>${s.name}</span>
+          <button class="btn-del" onclick="removeStudent('${s.id}')">삭제</button>
+        </div>`
+      ).join('');
+    }
+
+    window.addStudent = async function() {
+      const name = document.getElementById('newStudentName').value.trim();
+      if (!name) return;
+      await addDoc(collection(db, 'students'), { name, active: true, createdAt: new Date().toISOString() });
+      document.getElementById('newStudentName').value = '';
+      await loadStudents();
+    };
+
+    window.removeStudent = async function(id) {
+      if (!confirm('삭제하시겠습니까?')) return;
+      await updateDoc(doc(db, 'students', id), { active: false });
+      await loadStudents();
+    };
+
+    // 결과 로드
+    async function loadResults() {
+      const snap = await getDocs(collection(db, 'results'));
+      allResults = [];
+      snap.forEach(d => allResults.push({ id: d.id, ...d.data() }));
+      renderResults();
+    }
+
+    function renderResults() {
+      const type = document.getElementById('filterType').value;
+      const student = document.getElementById('filterStudent').value;
+      let list = allResults;
+      if (type) list = list.filter(r => r.examType === type);
+      if (student) list = list.filter(r => r.studentId === student);
+      list.sort((a,b) => b.submittedAt?.localeCompare(a.submittedAt));
+      const tbody = document.getElementById('resultsTable');
+      tbody.innerHTML = list.map(r => {
+        const grade = r.total >= 400 ? 'A' : r.total >= 300 ? 'B' : r.total >= 200 ? 'C' : 'F';
+        const gradeLabel = grade === 'F' ? '불합격' : grade + '등급';
+        const date = r.submittedAt ? new Date(r.submittedAt).toLocaleDateString('ko-KR') : '-';
+        return `<tr>
+          <td>${r.studentName}</td>
+          <td>${r.examType}</td>
+          <td>${r.examRound}회</td>
+          <td><strong>${r.total}</strong>점</td>
+          <td class="grade-${grade}">${gradeLabel}</td>
+          <td>${date}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    document.getElementById('filterType').addEventListener('change', renderResults);
+    document.getElementById('filterStudent').addEventListener('change', renderResults);
+
+    // 반 전체 유형별 평균 차트
+    function renderChart() {
+      const cats = ['유형1','유형2','유형3','유형4','유형5','유형6'];
+      const maxScores = { '유형1':60,'유형2':30,'유형3':100,'유형4':90,'유형5':150,'유형6':70 };
+      const sums = {}; const counts = {};
+      cats.forEach(c => { sums[c] = 0; counts[c] = 0; });
+      allResults.forEach(r => {
+        if (!r.categoryScores) return;
+        cats.forEach(c => {
+          if (r.categoryScores[c] !== undefined) { sums[c] += r.categoryScores[c]; counts[c]++; }
+        });
+      });
+      const avgs = cats.map(c => counts[c] ? Math.round(sums[c]/counts[c]/maxScores[c]*100) : 0);
+      const ctx = document.getElementById('classChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: cats,
+          datasets: [{
+            label: '평균 성취율 (%)',
+            data: avgs,
+            backgroundColor: cats.map((_,i) => `hsl(${210+i*15},70%,55%)`),
+            borderRadius: 6,
+          }]
+        },
+        options: {
+          scales: { y: { min: 0, max: 100, ticks: { callback: v => v+'%' } } },
+          plugins: { legend: { display: false } }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

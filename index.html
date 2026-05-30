@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITQ 인터넷 자동채점 시스템</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Malgun Gothic', sans-serif; background: #f0f4f8; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .container { background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); padding: 48px 40px; width: 100%; max-width: 480px; }
+    .logo { text-align: center; margin-bottom: 32px; }
+    .logo h1 { font-size: 22px; color: #1a56db; font-weight: 700; margin-bottom: 6px; }
+    .logo p { font-size: 13px; color: #6b7280; }
+    label { display: block; font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 8px; }
+    select { width: 100%; padding: 12px 14px; border: 1.5px solid #d1d5db; border-radius: 8px; font-size: 15px; font-family: inherit; color: #111; background: #fff; margin-bottom: 24px; outline: none; }
+    select:focus { border-color: #1a56db; }
+    .btn { width: 100%; padding: 14px; background: #1a56db; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .btn:hover { background: #1447b2; }
+    .btn:disabled { background: #9ca3af; cursor: not-allowed; }
+    .divider { border: none; border-top: 1px solid #e5e7eb; margin: 28px 0; }
+    .admin-link { text-align: center; font-size: 13px; color: #6b7280; }
+    .admin-link a { color: #1a56db; text-decoration: none; }
+    .admin-link a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <h1>ITQ 인터넷 자동채점</h1>
+      <p>아카데미소프트 | 답안 제출 및 채점 시스템</p>
+    </div>
+
+    <label for="studentSelect">이름 선택</label>
+    <select id="studentSelect">
+      <option value="">-- 본인 이름을 선택하세요 --</option>
+    </select>
+
+    <label for="examType">시험 유형</label>
+    <select id="examType">
+      <option value="모의고사">모의고사</option>
+      <option value="기출복원">기출복원</option>
+    </select>
+
+    <label for="examRound">회차</label>
+    <select id="examRound">
+      <!-- 동적으로 채워짐 -->
+    </select>
+
+    <button class="btn" id="startBtn" onclick="goToExam()" disabled>답안 제출하기</button>
+
+    <hr class="divider">
+    <div class="admin-link">
+      <a href="admin.html">강사 관리 화면</a>
+    </div>
+  </div>
+
+  <script type="module">
+    import { db } from './firebase-config.js';
+    import { collection, getDocs } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
+    // 수강생 목록 로드
+    async function loadStudents() {
+      const select = document.getElementById('studentSelect');
+      try {
+        const snap = await getDocs(collection(db, 'students'));
+        const students = [];
+        snap.forEach(doc => {
+          const d = doc.data();
+          if (d.active) students.push({ id: doc.id, name: d.name });
+        });
+        students.sort((a,b) => a.name.localeCompare(b.name, 'ko'));
+        students.forEach(s => {
+          const opt = document.createElement('option');
+          opt.value = s.id;
+          opt.textContent = s.name;
+          select.appendChild(opt);
+        });
+      } catch(e) {
+        // Firestore 미연동 시 로컬 목록 사용
+        const names = ["부미영","이순자","김순희","이영구","김복희","김찬규","오영순","고용준","김희선","정범수","손용호","지영하","고경자","정소라"];
+        names.forEach((n,i) => {
+          const opt = document.createElement('option');
+          opt.value = 'student_' + (i+1);
+          opt.textContent = n;
+          select.appendChild(opt);
+        });
+      }
+    }
+
+    // 회차 업데이트
+    function updateRounds() {
+      const type = document.getElementById('examType').value;
+      const roundSel = document.getElementById('examRound');
+      roundSel.innerHTML = '';
+      const max = type === '모의고사' ? 10 : 20;
+      for (let i = 1; i <= max; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = i + '회';
+        roundSel.appendChild(opt);
+      }
+    }
+
+    document.getElementById('examType').addEventListener('change', updateRounds);
+    document.getElementById('studentSelect').addEventListener('change', function() {
+      document.getElementById('startBtn').disabled = !this.value;
+    });
+
+    window.goToExam = function() {
+      const studentId = document.getElementById('studentSelect').value;
+      const studentName = document.getElementById('studentSelect').selectedOptions[0].text;
+      const examType = document.getElementById('examType').value;
+      const examRound = document.getElementById('examRound').value;
+      if (!studentId) return;
+      sessionStorage.setItem('studentId', studentId);
+      sessionStorage.setItem('studentName', studentName);
+      sessionStorage.setItem('examType', examType);
+      sessionStorage.setItem('examRound', examRound);
+      location.href = 'exam.html';
+    };
+
+    loadStudents();
+    updateRounds();
+  </script>
+</body>
+</html>

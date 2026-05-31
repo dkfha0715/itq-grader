@@ -21,7 +21,8 @@
     .grade-F { background: #fee2e2; color: #dc2626; }
     .section { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); margin-bottom: 16px; overflow: hidden; }
     .section-title { background: #1e3a5f; color: #fff; padding: 12px 20px; font-size: 14px; font-weight: 700; }
-    .chart-wrap { padding: 20px; }
+    .chart-wrap { padding: 16px; display: flex; justify-content: center; }
+    .chart-wrap canvas { max-width: 360px; max-height: 280px; }
     table { width: 100%; border-collapse: collapse; }
     th { background: #f3f4f6; padding: 10px 14px; font-size: 13px; color: #374151; text-align: left; }
     td { padding: 10px 14px; font-size: 13px; border-bottom: 1px solid #f3f4f6; }
@@ -57,7 +58,7 @@
   <div class="section">
     <div class="section-title">유형별 성취도</div>
     <div class="chart-wrap">
-      <canvas id="radarChart" height="260"></canvas>
+      <canvas id="radarChart"></canvas>
     </div>
   </div>
 
@@ -115,6 +116,8 @@
         }]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: true,
         scales: { r: { min: 0, max: 100, ticks: { stepSize: 25, font: { size: 10 } } } },
         plugins: { legend: { display: false } }
       }

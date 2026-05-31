@@ -1,0 +1,3330 @@
+window.ANSWERS_DATA = {
+  "모의고사": {
+    "1": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "인공지능 에이전트(AI Agent)",
+        "url": "https://www.etnews.com/20241126000257",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "1,767,000원",
+        "url": "https://vo.la/dyJd7",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "벌",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "크롤러(Crawler)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "15,200원",
+        "url": "https://vo.la/QegO0H",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "꽃총산호",
+        "url": "https://url.kr/brwqc2",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "높이 25cm",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/1mk7io"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "30명",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/yrr3pw"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "충청남도 공주시 관광단지길 34 (웅진동 360번지)",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/ue9l9r"
+      }
+    },
+    "2": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "디토소비(Ditto Consumption)",
+        "url": "https://terms.naver.com/entry.naver?docId=6712452&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "-0.6℃",
+        "url": "https://vo.la/e5WQm",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "고양이",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "페이지랭크(PageRank)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "2025.08.27(수) ~ 2025.11.30(일)",
+        "url": "https://url.kr/3m54n4",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "조안 조나스(Joan Jonas)",
+        "url": "https://url.kr/h2uu2p",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "에브리 리틀 띵(Every Little Thing)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/gt6o61"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "있는 힘껏 살다(Life of Every Wholehearted Beat)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/gt6o61"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "반려: 공진화해 온 관계의 성찰과 재구성",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/gt6o61"
+      }
+    },
+    "3": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "도어스테핑(door stepping)",
+        "url": "http://www.danbinews.com/news/articleView.html?idxno=20966",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "640.8mm",
+        "url": "https://url.kr/snwa2h",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "빌 게이츠(Bill Gates)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "고트족",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "그라시재라",
+        "url": "https://vo.la/f9NeHt",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "B03",
+        "url": "https://url.kr/i67yfs",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "2025-08-14 ~ 2025-12-14",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/mqymbs"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "2,000원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/dksyru"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "경기도 수원시 영통구 광교로 182",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/jptc2h"
+      }
+    },
+    "4": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "더블 딥(Double Dip 또는 W자형 경제구조, 이중침체현상, W자형 경기 침체)",
+        "url": "https://terms.naver.com/entry.naver?docId=929672&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "302.7mm",
+        "url": "https://url.kr/wle58s",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "돌고래",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "토머스 A. 왓슨(Thomas A. Watson)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "재슬린 카우어(Jasleen Kaur)",
+        "url": "https://url.kr/nbge4b",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "대조영함",
+        "url": "https://vo.la/aZomec",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "7,000원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/qzespd"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "2014년 3월",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/p63zsf"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "거창군 북상면 덕유월성로 1312-96",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/qcaslw"
+      }
+    },
+    "5": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "리쇼어링(Reshoring)",
+        "url": "https://www.danbinews.com/news/articleView.html?idxno=20468",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "31.9℃",
+        "url": "https://url.kr/1nfs9x",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "이사오 타카하타(Isao Takahata)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "93",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "신해양강국 재도약",
+        "url": "https://url.kr/o9kfhs",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "10월 21일",
+        "url": "https://vo.la/8MmTKL",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "충효관",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/LxY4Xh"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "경상북도 예천군 감천면 복골길 150",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/jwpy9T"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "1986년 10월 15일",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/bX5Gwu"
+      }
+    },
+    "6": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "베블런 효과(Veblen effect)",
+        "url": "https://terms.naver.com/entry.naver?docId=68505&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "21.7℃",
+        "url": "https://url.kr/etcdlm",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "라즈베리 파이(Raspberry Pi)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "21,196",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "블루베리",
+        "url": "https://vo.la/IhAu9n",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "128,130원",
+        "url": "https://url.kr/2qnhbi",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "1903년 5월 2일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/6hkd8f"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "194m",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/6hkd8f"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "경기도 광명시 가학로85번길 142",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/uqvpxc"
+      }
+    },
+    "7": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "문샷(Moonshot)",
+        "url": "http://www.danbinews.com/news/articleView.html?idxno=15538",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "20.8℃",
+        "url": "https://url.kr/vbh8lc",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "월드 와이드 웹(World Wide Web)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "율리우스력",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "히어리, 반달가슴곰",
+        "url": "https://url.kr/olnxg8",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "52,300",
+        "url": "https://url.kr/o75cot",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "5월2일 ~ 5월6일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/d5zw35"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "숲과 함께 만드는 푸르고 건강한 미래",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/d5zw35"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "서울특별시 강남구 영동대로 513",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/bdj6un"
+      }
+    },
+    "8": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "블루수소(Blue Hydrogen)",
+        "url": "http://www.danbinews.com/news/articleView.html?idxno=15386",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "5,210명",
+        "url": "https://url.kr/v7nge3",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "사진(Photography)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "루브르 박물관",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "2022-02-13",
+        "url": "https://url.kr/39jeg4",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "대전둘레산길, 한라산둘레길",
+        "url": "https://url.kr/41338e",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "9월 23일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/vgwa5p"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "5,000원",
+        "score": 18,
+        "category": "유형6"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "강원특별자치도 원주시 남원로 105",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/sbv1aq"
+      }
+    },
+    "9": {
+      "1": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "임플로이언서",
+        "url": "http://www.danbinews.com/news/articleView.html?idxno=15328",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "22330",
+        "url": "https://url.kr/lgivsh",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "앨런 케이(Alan Kay)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "배래",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "15,000원",
+        "url": "https://vo.la/NUqF0",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "7,700원",
+        "url": "https://vo.la/FtWOgxt",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "9월 23일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/vgwa5p"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "5,000원",
+        "score": 18,
+        "category": "유형6"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "강원특별자치도 원주시 남원로 105",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/sbv1aq"
+      }
+    },
+    "10": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "베리 페리(팬톤 17-3938 Very Peri)",
+        "url": "https://www.fashionn.com/board/read_new.php?table=1004&number=39337",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트",
+        "answer": "7.6cm",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "개구리",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "네메아의 사자",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "니혼 히단쿄",
+        "url": "https://url.kr/3otsz8",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "1995년",
+        "url": "https://url.kr/4i7425",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "4,000원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/8dopwo"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "2025년 08월 05일 ~ 2025년 11월 30일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/1p6v6c"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "경기도 수원시 팔달구 정조로 833",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/yrxxx7"
+      }
+    }
+  },
+  "기출복원": {
+    "1": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "스티커 쇼크(sticker shock)",
+        "url": "http://www.danbinews.com/news/articleView.html?idxno=20897",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "27.6℃",
+        "url": "https://vo.la/pBNZC",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "뱀(snake)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "산타 마리아(Santa María)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "필즈상",
+        "url": "https://url.kr/x4k1d3",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "변화 속 __ 챙김",
+        "url": "https://vo.la/MF2Si",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "5월 21일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/HBzmL"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "미증유의 대홍수: 1925 을축년",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/y9j9xo"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "서울특별시 종로구 새문안로 55",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/6im3ef"
+      }
+    },
+    "2": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "미닝 아웃(meaning out)",
+        "url": "https://terms.naver.com/entry.naver?docId=4396872&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "17.0℃",
+        "url": "https://vo.la/Li3vo",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "해바라기(Sunflower)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "HTTP",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "김춘영",
+        "url": "https://url.kr/kp28kj",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "각角진 백자 이야기",
+        "url": "https://url.kr/ww5bqv",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "1974년 8월 15일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/ma33R"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "2,000원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/zly1Y"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "의왕역",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/qvDR4"
+      }
+    },
+    "3": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "파싱(Parsing)",
+        "url": "https://www.scienceall.com/brd/board/390/L/menu/317?brdType=R&bbsSn=230840",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "10.3℃",
+        "url": "https://url.kr/u33zvo",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "소나무",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "관성의 법칙",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "2.94%",
+        "url": "https://url.kr/1o7ixo",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "어쩔수가없다(NO OTHER CHOICE)",
+        "url": "https://url.kr/8wgtxf",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "9월 4일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/zf5tts"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "진짜 지식재산으로 여는 AI 3강과 초격차 문화강국",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/Tu5NG"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "세종특별자치시 갈매로 477",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/CIpaq"
+      }
+    },
+    "4": {
+      "1": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "미닝아웃(meaning out)",
+        "url": "https://terms.naver.com/entry.naver?docId=4396872&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "9.9℃",
+        "url": "https://vo.la/6Oo7M",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "구름",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "블랙홀",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "3코스(또는 3-2코스)",
+        "url": "https://vo.la/oOsL3",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "오페라 라 보엠 : 2025 라벨라 그랜드 갈라",
+        "url": "https://url.kr/vnvna7",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "2007년",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/fEcjK"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "2000.07.18",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/S9i3H"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "5,000원",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/DmXXY"
+      }
+    },
+    "5": {
+      "1": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "아웃링크(outlink)",
+        "url": "https://terms.naver.com/entry.naver?docId=5568569&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "-0.9℃",
+        "url": "https://vo.la/Mbkpk",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "K-pop 아이돌 또는 K-pop 그룹",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "십자군 전쟁",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "SOUL LANTERN: 서울, 빛을 놀이하다",
+        "url": "https://url.kr/ywomlg",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "오만원(50,000원)",
+        "url": "https://vo.la/kqTlo",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "2025년 9월 2일-2026년 5월 31일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/sgf4tr"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "과녁, 소통의 바다",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/281qat"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "서울시 관악구 남부순환로 2076",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/979r8i"
+      }
+    },
+    "6": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "탄소 중립(carbon neutrality), 넷 제로(net zero), 탄소 제로(carbon zero)",
+        "url": "https://terms.naver.com/entry.naver?docId=2064781&cid=50305&categoryId=50305",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "12.8",
+        "url": "https://vo.la/Mbkpk",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "나폴레옹 보나파르트(Napoléon Bonaparte)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "조면기",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "처용무",
+        "url": "https://url.kr/cez5dv",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "박은경",
+        "url": "https://url.kr/sadljd",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "김수근",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/noanhu"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "국보순회전, 모두가 함께하는 180일의 여정 – 가락진 멋과 싱싱한 아름다움, 분청사기",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/rpe8zy"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "경남 진주시 남강로 626-35",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/ddhuo6"
+      }
+    },
+    "7": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "빅블러(Big Blur)",
+        "url": "https://terms.naver.com/entry.naver?docId=3377257&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "7.1℃",
+        "url": "https://url.kr/61fngq",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "경주",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "노르망디",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "7,700원",
+        "url": "https://url.kr/4jry5o",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "짱구는 못말려 Official Licensed Concert – 떡잎마을 교향악단",
+        "url": "https://url.kr/uusjp1",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "순천만국가정원, 태화강국가정원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/sqvob1"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "5,000원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/gdr85b"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "세종특별자치시 정부2청사로 10, SM타워 3층",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/c1cerm"
+      }
+    },
+    "8": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "린스타트업(lean startup)",
+        "url": "https://terms.naver.com/entry.naver?docId=1847238&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "397.1mm",
+        "url": "https://url.kr/jbne8c",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "달(Moon)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "직접 민주주의 또는 민주주의",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "통영 비진도",
+        "url": "https://vo.la/JQpUZEs",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "담양 대나무밭",
+        "url": "https://vo.la/shnRTZt",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "1975",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/UCrydo"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "국무총리",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/9rQal4"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "세종특별자치시 정부2청사로 13",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/jveah"
+      }
+    },
+    "9": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "펭귄 효과(penguin effect)",
+        "url": "https://terms.naver.com/entry.naver?docId=5687144&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "27.5℃",
+        "url": "https://vo.la/nVNIs",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "태양(Sun)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "홀리(Holi)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "15,000원",
+        "url": "https://vo.la/NUqF0",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "7,700원",
+        "url": "https://vo.la/FtWOgxt",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "판소리, 모두의 울림(PANSORI: A Soundscape of the 21st Century)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/icftzm"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "일 지아르디노 비안코 아트 스페이스 (이탈리아, 베니스)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/1ea6u4"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "16,000원",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/vr42wb"
+      }
+    },
+    "10": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "그린스완(Green Swan)",
+        "url": "https://terms.naver.com/entry.naver?docId=5917644&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "893건",
+        "url": "https://vo.la/GiTvx",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "태양(Sun)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "1월 1일",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "니혼 히단쿄",
+        "url": "https://url.kr/3otsz8",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "1995년",
+        "url": "https://url.kr/4i7425",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "푸틴에 반대하는 모든 사람(Mr. Nobody Against Putin)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/zd813q"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "바위를 부수고(Cutting Through Rocks)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://url.kr/hk6isa"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "우리가 살고 싶은 하루",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://url.kr/chu4h1"
+      }
+    },
+    "11": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "디지털 전환(Digital Transformation 또는 DX)",
+        "url": "https://terms.naver.com/entry.naver?docId=6633950&cid=42107&categoryId=42107",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "14.3℃",
+        "url": "https://vo.la/nVNIs",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "엘니뇨",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "Jupiter(목성)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "두 사람의 인터내셔널",
+        "url": "https://vo.la/y80gPhV",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "CONNECT, (우표, 세상을 연결하다), (연결)",
+        "url": "https://vo.la/Xts51tg",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "책 읽는 도시 글 쓰는 전주",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/T0QbB16"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "페이스",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/PLWiJbI"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "전주한벽문화관 공연장",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/JfiYO1B"
+      }
+    },
+    "12": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "로보어드바이저(robo-advisor)",
+        "url": "https://terms.naver.com/entry.naver?docId=3325496&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "15.5%",
+        "url": "https://tinyurl.com/ymmrc2mt",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "마그나 카르타(Magna Carta)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "1932년",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "발명 60년, 오늘을 만들다 내일을 꿈꾸다",
+        "url": "https://tinyurl.com/36zxh4pe",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "신재용",
+        "url": "https://tinyurl.com/2hjw8tt6",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "5,000원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/48pkardt"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "2018년 5월",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/3uzktwdu"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "경상북도 봉화군 춘양면 춘양로 1501",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://tinyurl.com/2xnjrfr7"
+      }
+    },
+    "13": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "앰비슈머(ambisumer)",
+        "url": "https://terms.naver.com/entry.naver?docId=2073579&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "2.41%",
+        "url": "https://tinyurl.com/4ap9aasf",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "장 줄리앙(Jean Jullien)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "1232년",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "원성원",
+        "url": "https://tinyurl.com/2ejae282",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "8월14일~8월16일",
+        "url": "https://tinyurl.com/mtkpmxm3",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "12,000원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/4w47zkyx"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "유동룡(이타미 준)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/3v9bzk8u"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "경상북도 경주시 경감로 614",
+        "score": 17,
+        "category": "유형6"
+      }
+    },
+    "14": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "디브레인(dBrain)",
+        "url": "https://terms.naver.com/entry.naver?docId=6712449&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "5.2점",
+        "url": "https://tinyurl.com/yc3ay8w6",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "초전도체(superconductor)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "코브라, 독수리",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "7월 4일",
+        "url": "https://tinyurl.com/5x7hvhdh",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "단양, 경북 동해안",
+        "url": "https://unesco.or.kr/geopark/",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "이상해도 괜찮아(Stay Strange)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/4ep9fv3u"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "그를 찾아서(About a Hero)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/2rkydj7m"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "60,000원",
+        "score": 17,
+        "category": "유형6"
+      }
+    },
+    "15": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "프롭테크(proptech)",
+        "url": "https://terms.naver.com/entry.naver?docId=5704795&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "20위",
+        "url": "https://tinyurl.com/mshyaup7",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "안정복",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "토가 프라이텍스타(Toga praetexta)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "플라스틱 오염 종식(Beat Plastic Pollution)",
+        "url": "https://tinyurl.com/547vjxd4",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "백제 고도의 길",
+        "url": "https://tinyurl.com/4v8e77r6",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "김은희, 조진웅",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/svtftrpe"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "Ready Climate Action(레디, 클라이메이트, 액션)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/2s425eba"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "캔 아이 겟 위트니스?(Can I Get a Witness?)",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://tinyurl.com/ye2byn4k"
+      }
+    },
+    "16": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "웹셸(web shell)",
+        "url": "https://terms.naver.com/entry.naver?docId=932526&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "0.683명",
+        "url": "https://tinyurl.com/5n99cbuy",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "다중우주(multiverse)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "20",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "1.8km",
+        "url": "https://tinyurl.com/mr37jfaw",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "우리가 만들어가는 지속가능한 내일(Building a Sustainable Tomorrow)",
+        "url": "https://tinyurl.com/3f3um5b2",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "2024년 12월 11일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://tinyurl.com/y5b4xypw"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "제항승람",
+        "score": 18,
+        "category": "유형6"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "6,000원",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://tinyurl.com/yc4me2hb"
+      }
+    },
+    "17": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "캐즘(Chasm)",
+        "url": "https://terms.naver.com/entry.naver?docId=2063822&cid=42107&categoryId=42107",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "29.2℃",
+        "url": "https://vo.la/Mbkpk",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "알베르트 아인슈타인(Albert Einstein)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "가마솥",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "제임스(James)",
+        "url": "https://tinyurl.com/yc2jazhs",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "148,500원",
+        "url": "https://tinyurl.com/bdd66p42",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "광양 중흥산성 쌍사자석등, 화순 대곡리 출토 청동유물",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/7tXLg5N"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "1978년 12월 6일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/xBmThBg"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "광주광역시 북구 하서로 110",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/EY919br"
+      }
+    },
+    "18": {
+      "1": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "디지털튜터",
+        "url": "https://terms.naver.com/entry.naver?docId=6735641&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "27.4%",
+        "url": "https://vo.la/97rFTCS",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "목성(Jupiter)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "팩트체크(Fact Check)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "종다리(JONGDARI)",
+        "url": "https://url.kr/iqpd8e",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "믿을 구석 The Last Resort",
+        "url": "https://vo.la/udE16s9",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "1951년 04월 10일",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/c37g6cG"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "300만원",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/pN2PxKZ"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "서울시 서초구 남부순환로 2364",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/KPBd5uj"
+      }
+    },
+    "19": {
+      "1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "에이징 테크(aging-tech)",
+        "url": "https://terms.naver.com/entry.naver?docId=6122854&cid=43667&categoryId=43667",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "8.54일",
+        "url": "https://vo.la/P92nTKV",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "타이타닉(Titanic)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "필터 버블(Filter Bubble)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "아프가니스탄",
+        "url": "https://vo.la/niiMYYn",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "진미식당",
+        "url": "https://vo.la/LERDaPL",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "기계의 나라에서(In the Land of Machines)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/U1iHlNd"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "우리는 늘 선을 넘지(Beyond the Frame)",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/2dUxI8r"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "15,000원",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/YdT98p2"
+      }
+    },
+    "20": {
+      "1": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 30,
+        "category": "유형1"
+      },
+      "2": {
+        "type": "선택형",
+        "answer": "①",
+        "score": 30,
+        "category": "유형1"
+      },
+      "3-1": {
+        "type": "선택형",
+        "answer": "③",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-2": {
+        "type": "선택형",
+        "answer": "②",
+        "score": 10,
+        "category": "유형2"
+      },
+      "3-3": {
+        "type": "선택형",
+        "answer": "④",
+        "score": 10,
+        "category": "유형2"
+      },
+      "4": {
+        "type": "텍스트+URL",
+        "answer": "리서슈머(Researsumer)",
+        "url": "https://terms.naver.com/entry.naver?docId=4356815&cid=43665&categoryId=43665",
+        "score": 50,
+        "category": "유형3"
+      },
+      "5": {
+        "type": "텍스트+URL",
+        "answer": "10.3℃",
+        "url": "https://vo.la/h8SMVrb",
+        "score": 50,
+        "category": "유형3"
+      },
+      "6": {
+        "type": "텍스트",
+        "answer": "포도당(Glucose)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "7": {
+        "type": "텍스트",
+        "answer": "딥페이크(Deepfake)",
+        "score": 30,
+        "category": "유형4"
+      },
+      "8": {
+        "type": "선택형",
+        "answer": "⑤",
+        "score": 30,
+        "category": "유형4"
+      },
+      "9": {
+        "type": "이미지",
+        "answer": null,
+        "score": 50,
+        "category": "유형5"
+      },
+      "10": {
+        "type": "텍스트+URL",
+        "answer": "인도",
+        "url": "https://vo.la/AqSPbZ9",
+        "score": 50,
+        "category": "유형5"
+      },
+      "11": {
+        "type": "텍스트+URL",
+        "answer": "110,000원",
+        "url": "https://vo.la/BEunnPR",
+        "score": 50,
+        "category": "유형5"
+      },
+      "12-1": {
+        "type": "이미지",
+        "answer": null,
+        "score": 17,
+        "category": "유형6"
+      },
+      "12-2": {
+        "type": "텍스트",
+        "answer": "반달가슴곰",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/qIiBzGD"
+      },
+      "12-3": {
+        "type": "텍스트",
+        "answer": "백규흠",
+        "score": 18,
+        "category": "유형6",
+        "url": "https://vo.la/uwYiJox"
+      },
+      "12-4": {
+        "type": "텍스트",
+        "answer": "대전광역시 서구 청사로 189 1동 (15 ~ 18층)",
+        "score": 17,
+        "category": "유형6",
+        "url": "https://vo.la/m6OZzIK"
+      }
+    }
+  }
+};

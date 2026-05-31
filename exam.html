@@ -3,425 +3,490 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ITQ 인터넷 답안 제출</title>
+  <title>ITQ 인터넷 - 답안 제출</title>
+  <!-- 정답 데이터 (fetch 없이 직접 로드) -->
+  <script src="./answers_data.js"></script>
+  <!-- JSZip은 필요 시 동적 로드 -->
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Malgun Gothic', sans-serif; background: #f0f4f8; padding: 24px 16px; }
-    .header { background: #1a56db; color: #fff; padding: 16px 24px; border-radius: 12px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
-    .header h1 { font-size: 17px; font-weight: 700; }
-    .header .info { font-size: 13px; opacity: 0.85; }
-    .section { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); margin-bottom: 16px; overflow: hidden; }
-    .section-title { background: #1e3a5f; color: #fff; padding: 12px 20px; font-size: 14px; font-weight: 700; }
-    .section-title span { background: #fff; color: #1e3a5f; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px; }
-    .problem { padding: 16px 20px; border-bottom: 1px solid #f3f4f6; }
-    .problem:last-child { border-bottom: none; }
-    .problem-label { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 10px; }
-    .problem-label .score { color: #6b7280; font-weight: 400; margin-left: 6px; font-size: 12px; }
-    .choices { display: flex; gap: 8px; flex-wrap: wrap; }
-    .choice-btn { padding: 8px 18px; border: 1.5px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; font-size: 14px; font-family: inherit; transition: all 0.15s; }
-    .choice-btn:hover { border-color: #1a56db; color: #1a56db; }
-    .choice-btn.selected { background: #1a56db; color: #fff; border-color: #1a56db; }
-    input[type="text"] { width: 100%; padding: 10px 12px; border: 1.5px solid #d1d5db; border-radius: 6px; font-size: 14px; font-family: inherit; outline: none; }
-    input[type="text"]:focus { border-color: #1a56db; }
-    .file-upload { border: 2px dashed #d1d5db; border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; background: #f9fafb; transition: border-color 0.2s; }
-    .file-upload:hover { border-color: #1a56db; }
-    .file-upload input { display: none; }
-    .file-upload .upload-text { font-size: 13px; color: #6b7280; }
-    .file-upload .file-name { font-size: 13px; color: #1a56db; font-weight: 600; margin-top: 6px; }
-    .submit-area { padding: 24px 0 8px; text-align: center; }
-    .btn-submit { background: #1a56db; color: #fff; border: none; padding: 15px 60px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: inherit; }
-    .btn-submit:hover { background: #1447b2; }
-    .btn-submit:disabled { background: #9ca3af; cursor: not-allowed; }
-    .back-link { display: block; text-align: center; margin-top: 12px; font-size: 13px; color: #6b7280; cursor: pointer; text-decoration: none; }
-    .back-link:hover { color: #1a56db; }
-    .hwpx-note { font-size: 11px; color: #9ca3af; margin-top: 6px; }
-    .upload-ok { color: #16a34a; font-weight: 600; }
+    body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; background: #e8f0f3; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* ── 헤더 ── */
+    .header {
+      background: #1a7a8e; color: #fff;
+      height: 56px; display: flex; align-items: center;
+      padding: 0 24px; gap: 20px; flex-shrink: 0;
+      border-bottom: 2px solid #136475;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 900; letter-spacing: 2px; }
+    .logo-icon { width: 32px; height: 32px; background: #fff; color: #1a7a8e; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 12px; }
+    .hd-div { width: 1px; height: 32px; background: rgba(255,255,255,0.3); }
+    .hd-info { }
+    .hd-info .lbl { font-size: 10px; opacity: 0.75; }
+    .hd-info .val { font-size: 13px; font-weight: 700; }
+
+    /* ── 메인 ── */
+    .main { flex: 1; display: flex; align-items: flex-start; justify-content: center; padding: 40px 20px; }
+
+    /* ── 업로드 카드 ── */
+    .card {
+      background: #fff; border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      width: 100%; max-width: 680px;
+      overflow: hidden;
+    }
+    .card-header {
+      background: #2a8fa3; color: #fff;
+      padding: 18px 28px;
+    }
+    .card-header h2 { font-size: 16px; font-weight: 700; }
+    .card-header p { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+    .card-body { padding: 32px 28px; }
+
+    /* 업로드 영역 */
+    .upload-zone {
+      border: 2.5px dashed #a8cdd8;
+      border-radius: 10px;
+      padding: 48px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #f4fafc;
+      position: relative;
+    }
+    .upload-zone:hover, .upload-zone.drag { border-color: #1a7a8e; background: #e4f5f8; }
+    .upload-zone.has-file { border-style: solid; border-color: #2aaa8e; background: #f0fdf8; }
+    .upload-zone input { display: none; }
+    .upload-icon { font-size: 48px; margin-bottom: 12px; }
+    .upload-main-text { font-size: 16px; font-weight: 700; color: #1a5a6a; margin-bottom: 6px; }
+    .upload-sub-text { font-size: 13px; color: #7a9aa8; }
+    .file-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #e0f7f0; color: #16a34a;
+      border: 1.5px solid #86efac; border-radius: 20px;
+      padding: 6px 16px; font-size: 14px; font-weight: 700;
+      margin-top: 12px;
+    }
+
+    /* 정보 입력 */
+    .info-row { display: flex; gap: 12px; margin-bottom: 20px; }
+    .info-field { flex: 1; }
+    .info-field label { display: block; font-size: 12px; font-weight: 700; color: #5a7a87; margin-bottom: 6px; }
+    .info-field select, .info-field input {
+      width: 100%; padding: 10px 12px;
+      border: 2px solid #c8dde4; border-radius: 6px;
+      font-size: 14px; font-family: inherit; outline: none;
+    }
+    .info-field select:focus, .info-field input:focus { border-color: #1a7a8e; }
+
+    /* 안내 박스 */
+    .guide-box {
+      background: #f0f9fb; border: 1px solid #b8e0e8;
+      border-radius: 8px; padding: 14px 18px; margin-bottom: 24px;
+    }
+    .guide-box .guide-title { font-size: 13px; font-weight: 700; color: #1a7a8e; margin-bottom: 8px; }
+    .guide-box ol { padding-left: 18px; }
+    .guide-box li { font-size: 12px; color: #3a6a77; line-height: 1.8; }
+
+    /* 버튼 */
+    .btn-submit {
+      width: 100%; padding: 15px;
+      background: #1a7a8e; color: #fff;
+      border: none; border-radius: 8px;
+      font-size: 16px; font-weight: 700;
+      cursor: pointer; font-family: inherit;
+      transition: background 0.15s;
+    }
+    .btn-submit:hover { background: #136475; }
+    .btn-submit:disabled { background: #9ab8c0; cursor: not-allowed; }
+    .btn-back { display: block; text-align: center; margin-top: 12px; font-size: 13px; color: #7a9aa8; cursor: pointer; background: none; border: none; font-family: inherit; width: 100%; }
+    .btn-back:hover { color: #1a7a8e; }
+
+    /* 파싱 결과 미리보기 */
+    .preview-section { display: none; margin-top: 24px; }
+    .preview-title { font-size: 14px; font-weight: 700; color: #1a5a6a; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .preview-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .preview-table th { background: #2a8fa3; color: #fff; padding: 8px 12px; text-align: left; font-weight: 700; }
+    .preview-table td { padding: 7px 12px; border-bottom: 1px solid #eef4f6; }
+    .preview-table tr:last-child td { border-bottom: none; }
+    .preview-table tr:nth-child(even) td { background: #f8fcfd; }
+    .ans-filled { color: #16a34a; font-weight: 600; }
+    .ans-empty { color: #ef4444; font-style: italic; }
+    .ans-image { color: #8b5cf6; font-weight: 600; }
+
+    /* 진행 상태 */
+    .progress-msg { text-align: center; padding: 20px; color: #5a7a87; font-size: 14px; display: none; }
+    .spinner { display: inline-block; width: 20px; height: 20px; border: 3px solid #c8dde4; border-top-color: #1a7a8e; border-radius: 50%; animation: spin 0.8s linear infinite; vertical-align: middle; margin-right: 8px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* 오류 */
+    .error-box { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 14px 18px; color: #dc2626; font-size: 13px; display: none; margin-top: 16px; }
   </style>
 </head>
 <body>
 
+  <!-- 헤더 -->
   <div class="header">
-    <div>
-      <h1>ITQ 인터넷 답안 제출</h1>
-      <div class="info" id="headerInfo"></div>
+    <div class="logo">
+      <div class="logo-icon">ITQ</div>
+      KOAS
+    </div>
+    <span style="font-size:11px;opacity:0.7;">수험자용(인터넷, 정보검색)</span>
+    <div class="hd-div"></div>
+    <div class="hd-info">
+      <div class="lbl">성명</div>
+      <div class="val" id="hdrName">-</div>
+    </div>
+    <div class="hd-info">
+      <div class="lbl">시험 종목</div>
+      <div class="val">ITQ 인터넷</div>
+    </div>
+    <div class="hd-info">
+      <div class="lbl">회차</div>
+      <div class="val" id="hdrRound">-</div>
     </div>
   </div>
 
-  <form id="examForm">
+  <!-- 메인 -->
+  <div class="main">
+    <div class="card">
+      <div class="card-header">
+        <h2>답안 파일 제출</h2>
+        <p>작성 완료한 답안 파일(.hwpx)을 업로드하면 자동으로 채점됩니다.</p>
+      </div>
+      <div class="card-body">
 
-    <!-- 유형1: 인터넷 윤리 -->
-    <div class="section">
-      <div class="section-title">유형 1 — 인터넷 윤리 <span>60점</span></div>
-      <div class="problem">
-        <div class="problem-label">문제 1 <span class="score">(30점)</span></div>
-        <div class="choices" data-q="q1">
-          <button type="button" class="choice-btn" data-val="①">①</button>
-          <button type="button" class="choice-btn" data-val="②">②</button>
-          <button type="button" class="choice-btn" data-val="③">③</button>
-          <button type="button" class="choice-btn" data-val="④">④</button>
-          <button type="button" class="choice-btn" data-val="⑤">⑤</button>
+        <!-- 안내 -->
+        <div class="guide-box">
+          <div class="guide-title">제출 방법</div>
+          <ol>
+            <li>한글(HWP)에서 답안지를 열고 <strong>수험번호(없는 경우 생략), 성명</strong>과 각 문제의 정답을 입력합니다.</li>
+            <li>파일명은 <strong>수험번호-성명-인터넷.hwpx</strong> 형식으로 저장합니다.</li>
+            <li>아래에 저장된 .hwpx 파일을 업로드한 후 [채점하기]를 클릭합니다.</li>
+          </ol>
         </div>
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 2 <span class="score">(30점)</span></div>
-        <div class="choices" data-q="q2">
-          <button type="button" class="choice-btn" data-val="①">①</button>
-          <button type="button" class="choice-btn" data-val="②">②</button>
-          <button type="button" class="choice-btn" data-val="③">③</button>
-          <button type="button" class="choice-btn" data-val="④">④</button>
-          <button type="button" class="choice-btn" data-val="⑤">⑤</button>
+
+        <!-- 업로드 영역 -->
+        <div class="upload-zone" id="uploadZone" onclick="document.getElementById('hwpxFile').click()">
+          <input type="file" id="hwpxFile" accept=".hwpx,.hwp" style="display:none">
+          <div class="upload-icon">📄</div>
+          <div class="upload-main-text">답안 파일을 여기에 놓거나 클릭하여 선택</div>
+          <div class="upload-sub-text">지원 형식: .hwpx (한글 2020 이상)</div>
+          <div id="fileBadge" style="display:none" class="file-badge">✓ <span id="fileName"></span></div>
         </div>
-      </div>
-    </div>
 
-    <!-- 유형2: 일반검색I -->
-    <div class="section">
-      <div class="section-title">유형 2 — 인터넷 검색 (일반검색 I) <span>30점</span></div>
-      <div class="problem">
-        <div class="problem-label">문제 3-1 <span class="score">(10점)</span></div>
-        <div class="choices" data-q="q3_1">
-          <button type="button" class="choice-btn" data-val="①">①</button>
-          <button type="button" class="choice-btn" data-val="②">②</button>
-          <button type="button" class="choice-btn" data-val="③">③</button>
-          <button type="button" class="choice-btn" data-val="④">④</button>
-          <button type="button" class="choice-btn" data-val="⑤">⑤</button>
+        <!-- 오류 메시지 -->
+        <div class="error-box" id="errorBox"></div>
+
+        <!-- 파싱 진행 -->
+        <div class="progress-msg" id="progressMsg">
+          <span class="spinner"></span> 답안 파일을 분석하고 있습니다...
         </div>
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 3-2 <span class="score">(10점)</span></div>
-        <div class="choices" data-q="q3_2">
-          <button type="button" class="choice-btn" data-val="①">①</button>
-          <button type="button" class="choice-btn" data-val="②">②</button>
-          <button type="button" class="choice-btn" data-val="③">③</button>
-          <button type="button" class="choice-btn" data-val="④">④</button>
-          <button type="button" class="choice-btn" data-val="⑤">⑤</button>
+
+        <!-- 추출 미리보기 -->
+        <div class="preview-section" id="previewSection">
+          <div class="preview-title">
+            <span style="font-size:18px;">✅</span>
+            파일에서 추출된 답안 확인
+          </div>
+          <table class="preview-table">
+            <thead>
+              <tr><th>문제</th><th>제출 답안</th></tr>
+            </thead>
+            <tbody id="previewBody"></tbody>
+          </table>
         </div>
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 3-3 <span class="score">(10점)</span></div>
-        <div class="choices" data-q="q3_3">
-          <button type="button" class="choice-btn" data-val="①">①</button>
-          <button type="button" class="choice-btn" data-val="②">②</button>
-          <button type="button" class="choice-btn" data-val="③">③</button>
-          <button type="button" class="choice-btn" data-val="④">④</button>
-          <button type="button" class="choice-btn" data-val="⑤">⑤</button>
+
+        <!-- 제출 버튼 -->
+        <div style="margin-top: 24px;">
+          <button class="btn-submit" id="submitBtn" disabled onclick="doGrade()">채점하기</button>
+          <button class="btn-back" onclick="if(confirm('처음 화면으로 돌아가시겠습니까?')) location.href='index.html'">← 처음으로 돌아가기</button>
         </div>
+
       </div>
     </div>
+  </div>
 
-    <!-- 유형3: 일반검색II -->
-    <div class="section">
-      <div class="section-title">유형 3 — 인터넷 검색 (일반검색 II) <span>100점</span></div>
-      <div class="problem">
-        <div class="problem-label">문제 4 — 정답 <span class="score">(25점)</span></div>
-        <input type="text" id="q4_text" placeholder="검색한 정답을 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 4 — URL <span class="score">(25점)</span></div>
-        <input type="text" id="q4_url" placeholder="https://...">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 5 — 정답 <span class="score">(25점)</span></div>
-        <input type="text" id="q5_text" placeholder="검색한 정답을 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 5 — URL <span class="score">(25점)</span></div>
-        <input type="text" id="q5_url" placeholder="https://...">
-      </div>
-    </div>
+  <!-- Firebase는 채점 시점에만 동적 로드 -->
+  <script>
+    // ── 세션 정보 ──
+    const studentName = sessionStorage.getItem('studentName') || '';
+    const examType    = sessionStorage.getItem('examType')    || '모의고사';
+    const examRound   = sessionStorage.getItem('examRound')   || '1';
 
-    <!-- 유형4: 지능형 정보검색 -->
-    <div class="section">
-      <div class="section-title">유형 4 — 지능형 정보검색 <span>90점</span></div>
-      <div class="problem">
-        <div class="problem-label">문제 6 <span class="score">(30점)</span></div>
-        <input type="text" id="q6" placeholder="AI 검색 결과를 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 7 <span class="score">(30점)</span></div>
-        <input type="text" id="q7" placeholder="AI 검색 결과를 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 8 <span class="score">(30점)</span></div>
-        <div class="choices" data-q="q8">
-          <button type="button" class="choice-btn" data-val="①">①</button>
-          <button type="button" class="choice-btn" data-val="②">②</button>
-          <button type="button" class="choice-btn" data-val="③">③</button>
-          <button type="button" class="choice-btn" data-val="④">④</button>
-          <button type="button" class="choice-btn" data-val="⑤">⑤</button>
-        </div>
-      </div>
-    </div>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('hdrName').textContent  = studentName || '-';
+      document.getElementById('hdrRound').textContent = `${examType} ${examRound}회`;
 
-    <!-- 유형5: 실용검색 -->
-    <div class="section">
-      <div class="section-title">유형 5 — 인터넷 검색 (실용검색) <span>150점</span></div>
-      <div class="problem">
-        <div class="problem-label">문제 9 — 지도 캡처 이미지 <span class="score">(50점)</span></div>
-        <label class="file-upload" for="q9_file">
-          <input type="file" id="q9_file" accept="image/*">
-          <div class="upload-text">클릭하여 캡처 이미지 업로드 (jpg, png)</div>
-          <div class="file-name" id="q9_name"></div>
-        </label>
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 10 — 정답 <span class="score">(25점)</span></div>
-        <input type="text" id="q10_text" placeholder="검색한 정답을 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 10 — URL <span class="score">(25점)</span></div>
-        <input type="text" id="q10_url" placeholder="https://...">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 11 — 정답 <span class="score">(25점)</span></div>
-        <input type="text" id="q11_text" placeholder="검색한 정답을 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 11 — URL <span class="score">(25점)</span></div>
-        <input type="text" id="q11_url" placeholder="https://...">
-      </div>
-    </div>
+      // 드래그 앤 드롭
+      const zone = document.getElementById('uploadZone');
+      zone.addEventListener('dragover',  e => { e.preventDefault(); zone.classList.add('drag'); });
+      zone.addEventListener('dragleave', () => zone.classList.remove('drag'));
+      zone.addEventListener('drop', e => {
+        e.preventDefault(); zone.classList.remove('drag');
+        const f = e.dataTransfer.files[0];
+        if (f) handleFile(f);
+      });
 
-    <!-- 유형6: 정보가공 -->
-    <div class="section">
-      <div class="section-title">유형 6 — 정보 가공 <span>70점</span></div>
-      <div class="problem">
-        <div class="problem-label">문제 12-1 — 이미지 캡처 <span class="score">(17점)</span></div>
-        <label class="file-upload" for="q12_1_file">
-          <input type="file" id="q12_1_file" accept="image/*">
-          <div class="upload-text">클릭하여 캡처 이미지 업로드 (jpg, png)</div>
-          <div class="file-name" id="q12_1_name"></div>
-        </label>
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 12-2 <span class="score">(18점)</span></div>
-        <input type="text" id="q12_2" placeholder="정답을 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 12-3 <span class="score">(18점)</span></div>
-        <input type="text" id="q12_3" placeholder="정답을 입력하세요">
-      </div>
-      <div class="problem">
-        <div class="problem-label">문제 12-4 <span class="score">(17점)</span></div>
-        <input type="text" id="q12_4" placeholder="정답을 입력하세요">
-      </div>
-    </div>
-
-    <div class="submit-area">
-      <button type="button" class="btn-submit" id="submitBtn" onclick="submitExam()">채점하기</button>
-    </div>
-  </form>
-
-  <a class="back-link" href="index.html">← 처음으로 돌아가기</a>
-
-  <script type="module">
-    import { db } from './firebase-config.js';
-    import { doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
-
-    // 세션 정보 표시
-    const studentName = sessionStorage.getItem('studentName') || '알 수 없음';
-    const examType = sessionStorage.getItem('examType') || '모의고사';
-    const examRound = sessionStorage.getItem('examRound') || '1';
-    document.getElementById('headerInfo').textContent = `${studentName} | ${examType} ${examRound}회`;
-
-    // 선택형 버튼
-    document.querySelectorAll('.choices').forEach(group => {
-      group.querySelectorAll('.choice-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          group.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('selected'));
-          btn.classList.add('selected');
-        });
+      document.getElementById('hwpxFile').addEventListener('change', function() {
+        if (this.files[0]) handleFile(this.files[0]);
       });
     });
 
-    // 파일 업로드 미리보기
-    ['q9_file', 'q12_1_file'].forEach(id => {
-      document.getElementById(id).addEventListener('change', function() {
-        const nameEl = document.getElementById(id.replace('_file', '_name'));
-        nameEl.textContent = this.files[0] ? '✓ ' + this.files[0].name : '';
-        nameEl.className = 'file-name upload-ok';
-      });
-    });
+    // ── 파싱된 답안 저장 ──
+    let parsedAnswers = null;
 
-    function getChoice(qName) {
-      const sel = document.querySelector(`.choices[data-q="${qName}"] .choice-btn.selected`);
-      return sel ? sel.dataset.val : '';
+    function showError(msg) {
+      const box = document.getElementById('errorBox');
+      box.textContent = msg;
+      box.style.display = msg ? 'block' : 'none';
     }
 
-    // 정답 로드 및 채점
-    async function loadAnswers() {
+    // ── 파일 처리 ──
+    async function handleFile(file) {
+      showError('');
+      document.getElementById('previewSection').style.display = 'none';
+      document.getElementById('submitBtn').disabled = true;
+
+      if (!file.name.match(/\.hwpx?$/i)) {
+        showError('.hwpx 파일만 업로드할 수 있습니다.');
+        return;
+      }
+
+      // 파일명 표시
+      document.getElementById('fileName').textContent = file.name;
+      document.getElementById('fileBadge').style.display = 'inline-flex';
+      document.getElementById('uploadZone').classList.add('has-file');
+      document.getElementById('progressMsg').style.display = 'block';
+
       try {
-        const res = await fetch('../answers.json');
-        return await res.json();
+        parsedAnswers = await parseHwpx(file);
+        renderPreview(parsedAnswers);
+        document.getElementById('submitBtn').disabled = false;
       } catch(e) {
-        console.error('정답 파일 로드 실패', e);
-        return null;
+        showError('파일 분석 중 오류가 발생했습니다: ' + e.message);
+        console.error(e);
+      } finally {
+        document.getElementById('progressMsg').style.display = 'none';
       }
     }
 
-    function normalize(str) {
-      return (str || '').trim().replace(/\s+/g, ' ').toLowerCase();
+    // ── JSZip 로드 (CDN 실패 시 백업) ──
+    async function loadJSZip() {
+      if (typeof JSZip !== 'undefined') return;
+      const cdns = [
+        'https://unpkg.com/jszip@3.10.1/dist/jszip.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
+      ];
+      for (const url of cdns) {
+        try {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = url; s.onload = resolve; s.onerror = reject;
+            document.head.appendChild(s);
+          });
+          if (typeof JSZip !== 'undefined') return;
+        } catch(e) {}
+      }
+      throw new Error('JSZip 라이브러리를 불러올 수 없습니다. 인터넷 연결을 확인해 주세요.');
     }
 
-    function gradeText(submitted, correct) {
-      if (!submitted) return 0;
-      const s = normalize(submitted);
-      const c = normalize(correct);
-      if (s === c) return 1;
-      // 핵심 키워드 포함 여부 (괄호 안 영문명 제외한 한글 부분)
-      const coreKo = c.replace(/\(.*?\)/g, '').trim();
-      if (s.includes(coreKo) || coreKo.includes(s)) return 1;
-      return 0;
-    }
+    // ── hwpx 파싱 ──
+    async function parseHwpx(file) {
+      await loadJSZip();
+      const zip  = await JSZip.loadAsync(file);
+      const xmlStr = await zip.file('Contents/section0.xml').async('string');
+      const xmlDoc = new DOMParser().parseFromString(xmlStr, 'text/xml');
 
-    window.submitExam = async function() {
-      const btn = document.getElementById('submitBtn');
-      btn.disabled = true;
-      btn.textContent = '채점 중...';
-
-      const answers = await loadAnswers();
-      if (!answers) {
-        alert('정답 파일을 불러올 수 없습니다.');
-        btn.disabled = false;
-        btn.textContent = '채점하기';
-        return;
+      function findAll(node, tag) {
+        const res = [];
+        const walk = n => {
+          for (const ch of n.children) {
+            if (ch.tagName && ch.tagName.split(':').pop() === tag) res.push(ch);
+            walk(ch);
+          }
+        };
+        walk(node);
+        return res;
       }
 
-      const roundKey = examRound;
-      const examData = answers[examType]?.[roundKey];
-      if (!examData) {
-        alert(`${examType} ${examRound}회 정답 데이터가 없습니다.`);
-        btn.disabled = false;
-        btn.textContent = '채점하기';
-        return;
+      const tables = findAll(xmlDoc.documentElement, 'tbl');
+
+      function cellText(ti, ri, ci) {
+        if (ti >= tables.length) return '';
+        const rows = findAll(tables[ti], 'tr');
+        if (ri >= rows.length) return '';
+        const cells = [...rows[ri].children].filter(c => c.tagName && c.tagName.split(':').pop() === 'tc');
+        if (ci >= cells.length) return '';
+        return findAll(cells[ci], 't').map(t => t.textContent || '').join('').trim();
       }
 
-      // 제출 답안 수집
-      const submitted = {
-        '1': getChoice('q1'),
-        '2': getChoice('q2'),
-        '3-1': getChoice('q3_1'),
-        '3-2': getChoice('q3_2'),
-        '3-3': getChoice('q3_3'),
-        '4_text': document.getElementById('q4_text').value,
-        '4_url':  document.getElementById('q4_url').value,
-        '5_text': document.getElementById('q5_text').value,
-        '5_url':  document.getElementById('q5_url').value,
-        '6':  document.getElementById('q6').value,
-        '7':  document.getElementById('q7').value,
-        '8':  getChoice('q8'),
-        '9_image': document.getElementById('q9_file').files.length > 0,
-        '10_text': document.getElementById('q10_text').value,
-        '10_url':  document.getElementById('q10_url').value,
-        '11_text': document.getElementById('q11_text').value,
-        '11_url':  document.getElementById('q11_url').value,
-        '12_1_image': document.getElementById('q12_1_file').files.length > 0,
-        '12-2': document.getElementById('q12_2').value,
-        '12-3': document.getElementById('q12_3').value,
-        '12-4': document.getElementById('q12_4').value,
+      function cellHasImage(ti, ri) {
+        if (ti >= tables.length) return false;
+        const rows = findAll(tables[ti], 'tr');
+        if (ri >= rows.length) return false;
+        return findAll(rows[ri], 'ctrl').length > 0;
+      }
+
+      return {
+        studentNum:   cellText(0,1,4),
+        studentName:  cellText(0,1,5),
+        '1':          cellText(2,0,2),
+        '2':          cellText(3,0,2),
+        '3-1':        cellText(4,0,2),
+        '3-2':        cellText(4,1,2),
+        '3-3':        cellText(4,2,2),
+        '4_text':     cellText(5,0,2),
+        '4_url':      cellText(5,1,1),
+        '5_text':     cellText(6,0,2),
+        '6':          cellText(7,0,2),
+        '7':          cellText(8,0,2),
+        '8':          cellText(9,0,2),
+        '9_image':    cellHasImage(10,1),
+        '10_text':    cellText(11,0,2),
+        '11_text':    cellText(12,0,2),
+        '12_1_image': cellHasImage(13,3),
+        '12-2':       cellText(13,3,1),
+        '12-3':       cellText(13,5,0),
+        '12-4':       cellText(13,7,0),
       };
+    }
 
-      // 채점
+    // ── 미리보기 ──
+    function renderPreview(ans) {
+      const rows = [
+        ['문제 1 (선택)',    ans['1']],
+        ['문제 2 (선택)',    ans['2']],
+        ['문제 3-1 (선택)', ans['3-1']],
+        ['문제 3-2 (선택)', ans['3-2']],
+        ['문제 3-3 (선택)', ans['3-3']],
+        ['문제 4 — 정답',   ans['4_text']],
+        ['문제 4 — URL',    ans['4_url']],
+        ['문제 5 — 정답',   ans['5_text']],
+        ['문제 6',          ans['6']],
+        ['문제 7',          ans['7']],
+        ['문제 8 (선택)',    ans['8']],
+        ['문제 9 — 이미지', ans['9_image']    ? '이미지 첨부됨' : null, ans['9_image']    ? 'image' : 'empty'],
+        ['문제 10 — 정답',  ans['10_text']],
+        ['문제 11 — 정답',  ans['11_text']],
+        ['문제 12-1 — 이미지', ans['12_1_image'] ? '이미지 첨부됨' : null, ans['12_1_image'] ? 'image' : 'empty'],
+        ['문제 12-2',       ans['12-2']],
+        ['문제 12-3',       ans['12-3']],
+        ['문제 12-4',       ans['12-4']],
+      ];
+
+      document.getElementById('previewBody').innerHTML = rows.map(([label, val, type]) => {
+        let cls, display;
+        if (type === 'image') { cls = 'ans-image';  display = '🖼 이미지 첨부됨'; }
+        else if (!val)        { cls = 'ans-empty';  display = '(미입력)'; }
+        else                  { cls = 'ans-filled'; display = val; }
+        return `<tr><td>${label}</td><td class="${cls}">${display}</td></tr>`;
+      }).join('');
+
+      document.getElementById('previewSection').style.display = 'block';
+      document.getElementById('previewSection').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ── 채점 ──
+    function normalize(s) { return (s||'').trim().replace(/\s+/g,' ').toLowerCase(); }
+    function gradeText(sub, cor) {
+      if (!sub) return 0;
+      const s = normalize(sub), c = normalize(cor);
+      if (s === c) return 1;
+      const core = c.replace(/\(.*?\)/g,'').trim();
+      return (s.includes(core) || core.includes(s)) ? 1 : 0;
+    }
+
+    window.doGrade = async function() {
+      if (!parsedAnswers) return;
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true; btn.textContent = '채점 중...';
+
+      const allAnswers = window.ANSWERS_DATA;
+      if (!allAnswers) {
+        showError('정답 데이터를 불러올 수 없습니다. 페이지를 새로고침 해주세요.');
+        btn.disabled = false; btn.textContent = '채점하기';
+        return;
+      }
+
+      const examData = allAnswers[examType]?.[examRound];
+      if (!examData) {
+        showError(`${examType} ${examRound}회 정답 데이터가 없습니다.`);
+        btn.disabled = false; btn.textContent = '채점하기';
+        return;
+      }
+
+      const ans = parsedAnswers;
       const scores = {};
       let total = 0;
 
-      const grade = (key, ans, correct, maxScore) => {
-        const ok = normalize(ans) === normalize(correct);
-        const s = ok ? maxScore : 0;
-        scores[key] = { submitted: ans, correct, score: s, max: maxScore };
+      const gc = (key, max) => {
+        const ok = normalize(ans[key]) === normalize(examData[key]?.answer);
+        const s = ok ? max : 0;
+        scores[key] = { submitted: ans[key], correct: examData[key]?.answer, score: s, max };
         total += s;
-        return s;
       };
 
-      // 선택형
-      grade('1', submitted['1'], examData['1']?.answer, 30);
-      grade('2', submitted['2'], examData['2']?.answer, 30);
-      grade('3-1', submitted['3-1'], examData['3-1']?.answer, 10);
-      grade('3-2', submitted['3-2'], examData['3-2']?.answer, 10);
-      grade('3-3', submitted['3-3'], examData['3-3']?.answer, 10);
+      gc('1',30); gc('2',30); gc('3-1',10); gc('3-2',10); gc('3-3',10);
 
-      // 텍스트+URL (각 25점씩)
-      const q4t = gradeText(submitted['4_text'], examData['4']?.answer) * 25;
-      const q4u = gradeText(submitted['4_url'],  examData['4']?.url)    * 25;
-      scores['4'] = { submitted_text: submitted['4_text'], submitted_url: submitted['4_url'],
-                      correct: examData['4']?.answer, correct_url: examData['4']?.url,
-                      score: q4t + q4u, max: 50 };
-      total += q4t + q4u;
+      const q4t = gradeText(ans['4_text'], examData['4']?.answer)*25;
+      const q4u = gradeText(ans['4_url'],  examData['4']?.url   )*25;
+      scores['4'] = { submitted_text:ans['4_text'], submitted_url:ans['4_url'],
+                      correct:examData['4']?.answer, correct_url:examData['4']?.url, score:q4t+q4u, max:50 };
+      total += q4t+q4u;
 
-      const q5t = gradeText(submitted['5_text'], examData['5']?.answer) * 25;
-      const q5u = gradeText(submitted['5_url'],  examData['5']?.url)    * 25;
-      scores['5'] = { submitted_text: submitted['5_text'], submitted_url: submitted['5_url'],
-                      correct: examData['5']?.answer, correct_url: examData['5']?.url,
-                      score: q5t + q5u, max: 50 };
-      total += q5t + q5u;
+      const q5s = gradeText(ans['5_text'], examData['5']?.answer)*50;
+      scores['5'] = { submitted:ans['5_text'], correct:examData['5']?.answer, score:q5s, max:50 };
+      total += q5s;
 
-      // 유형4
-      const q6s = gradeText(submitted['6'], examData['6']?.answer) * 30;
-      scores['6'] = { submitted: submitted['6'], correct: examData['6']?.answer, score: q6s, max: 30 };
-      total += q6s;
-      const q7s = gradeText(submitted['7'], examData['7']?.answer) * 30;
-      scores['7'] = { submitted: submitted['7'], correct: examData['7']?.answer, score: q7s, max: 30 };
-      total += q7s;
-      grade('8', submitted['8'], examData['8']?.answer, 30);
+      ['6','7'].forEach(k => {
+        const s = gradeText(ans[k], examData[k]?.answer)*30;
+        scores[k] = { submitted:ans[k], correct:examData[k]?.answer, score:s, max:30 };
+        total += s;
+      });
+      gc('8',30);
 
-      // 이미지 (제출 여부만)
-      const q9s = submitted['9_image'] ? 50 : 0;
-      scores['9'] = { submitted: submitted['9_image'] ? '이미지 제출' : '미제출', score: q9s, max: 50, imageOnly: true };
+      const q9s = ans['9_image'] ? 50 : 0;
+      scores['9'] = { submitted: ans['9_image']?'이미지 제출':'미제출', score:q9s, max:50, imageOnly:true };
       total += q9s;
 
-      // 유형5 텍스트
-      const q10t = gradeText(submitted['10_text'], examData['10']?.answer) * 25;
-      const q10u = gradeText(submitted['10_url'],  examData['10']?.url)    * 25;
-      scores['10'] = { submitted_text: submitted['10_text'], submitted_url: submitted['10_url'],
-                       correct: examData['10']?.answer, correct_url: examData['10']?.url,
-                       score: q10t + q10u, max: 50 };
-      total += q10t + q10u;
+      ['10_text','11_text'].forEach(k => {
+        const qk = k.replace('_text','');
+        const s  = gradeText(ans[k], examData[qk]?.answer)*50;
+        scores[qk] = { submitted:ans[k], correct:examData[qk]?.answer, score:s, max:50 };
+        total += s;
+      });
 
-      const q11t = gradeText(submitted['11_text'], examData['11']?.answer) * 25;
-      const q11u = gradeText(submitted['11_url'],  examData['11']?.url)    * 25;
-      scores['11'] = { submitted_text: submitted['11_text'], submitted_url: submitted['11_url'],
-                       correct: examData['11']?.answer, correct_url: examData['11']?.url,
-                       score: q11t + q11u, max: 50 };
-      total += q11t + q11u;
-
-      // 유형6
-      const q12_1s = submitted['12_1_image'] ? 17 : 0;
-      scores['12-1'] = { submitted: submitted['12_1_image'] ? '이미지 제출' : '미제출', score: q12_1s, max: 17, imageOnly: true };
+      const q12_1s = ans['12_1_image'] ? 17 : 0;
+      scores['12-1'] = { submitted:ans['12_1_image']?'이미지 제출':'미제출', score:q12_1s, max:17, imageOnly:true };
       total += q12_1s;
 
-      const q12_2s = gradeText(submitted['12-2'], examData['12-2']?.answer) * 18;
-      scores['12-2'] = { submitted: submitted['12-2'], correct: examData['12-2']?.answer, score: q12_2s, max: 18 };
-      total += q12_2s;
-      const q12_3s = gradeText(submitted['12-3'], examData['12-3']?.answer) * 18;
-      scores['12-3'] = { submitted: submitted['12-3'], correct: examData['12-3']?.answer, score: q12_3s, max: 18 };
-      total += q12_3s;
-      const q12_4s = gradeText(submitted['12-4'], examData['12-4']?.answer) * 17;
-      scores['12-4'] = { submitted: submitted['12-4'], correct: examData['12-4']?.answer, score: q12_4s, max: 17 };
-      total += q12_4s;
+      [[18,'12-2'],[18,'12-3'],[17,'12-4']].forEach(([pt,k]) => {
+        const s = gradeText(ans[k], examData[k]?.answer)*pt;
+        scores[k] = { submitted:ans[k], correct:examData[k]?.answer, score:s, max:pt };
+        total += s;
+      });
 
-      // 유형별 합계
       const categoryScores = {
-        '유형1': (scores['1']?.score||0) + (scores['2']?.score||0),
-        '유형2': (scores['3-1']?.score||0) + (scores['3-2']?.score||0) + (scores['3-3']?.score||0),
-        '유형3': (scores['4']?.score||0) + (scores['5']?.score||0),
-        '유형4': (scores['6']?.score||0) + (scores['7']?.score||0) + (scores['8']?.score||0),
-        '유형5': (scores['9']?.score||0) + (scores['10']?.score||0) + (scores['11']?.score||0),
-        '유형6': (scores['12-1']?.score||0) + (scores['12-2']?.score||0) + (scores['12-3']?.score||0) + (scores['12-4']?.score||0),
+        '유형1': (scores['1']?.score||0)+(scores['2']?.score||0),
+        '유형2': (scores['3-1']?.score||0)+(scores['3-2']?.score||0)+(scores['3-3']?.score||0),
+        '유형3': (scores['4']?.score||0)+(scores['5']?.score||0),
+        '유형4': (scores['6']?.score||0)+(scores['7']?.score||0)+(scores['8']?.score||0),
+        '유형5': (scores['9']?.score||0)+(scores['10']?.score||0)+(scores['11']?.score||0),
+        '유형6': (scores['12-1']?.score||0)+(scores['12-2']?.score||0)+(scores['12-3']?.score||0)+(scores['12-4']?.score||0),
       };
 
       const result = {
         studentId: sessionStorage.getItem('studentId'),
-        studentName,
-        examType,
-        examRound,
-        total,
-        categoryScores,
-        scores,
+        studentName: studentName || ans.studentName,
+        examType, examRound, total, categoryScores, scores,
         submittedAt: new Date().toISOString()
       };
 
-      // Firebase 저장
+      // Firebase 저장 (동적 import)
       try {
+        const { db }    = await import('./firebase-config.js');
+        const { doc, setDoc } = await import('https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js');
         const docId = `${sessionStorage.getItem('studentId')}_${examType}_${examRound}_${Date.now()}`;
         await setDoc(doc(db, 'results', docId), result);
       } catch(e) {
